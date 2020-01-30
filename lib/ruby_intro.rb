@@ -14,7 +14,7 @@ end
 
 def sum_to_n? arr, n
   # YOUR CODE HERE
-  arr.permutation(2).any? { |a, b| a + b == n }
+  arr.permutation(2).to_a.any? { |x| x.inject(0, :+) == n }
 end
 
 # Part 2
