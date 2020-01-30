@@ -9,16 +9,19 @@ end
 
 def max_2_sum arr
   # YOUR CODE HERE
+  arr.sort.last(2).inject(0, :+)
 end
 
 def sum_to_n? arr, n
   # YOUR CODE HERE
+  arr.permutation(2).any? { |a, b| a + b == n }
 end
 
 # Part 2
 
 def hello(name)
   # YOUR CODE HERE
+  "Hello, #{name}"
 end
 
 def starts_with_consonant? s
