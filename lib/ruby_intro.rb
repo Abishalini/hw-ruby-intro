@@ -31,7 +31,7 @@ end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
-  # A multiple of 4 in binary is any binary numeber that ends with 00
+  # A multiple of 4 in binary is any binary number that ends with 00
   return true if s == "0"
 	/^[10]*00$/.match(s) != nil  
 end
@@ -40,4 +40,28 @@ end
 
 class BookInStock
 # YOUR CODE HERE
+  def initialize(isbn, price)
+    # Instance Variable
+    raise ArgumentError.new("ISBN is an empty string!") if isbn.empty?
+    raise ArgumentError.new("Price should be greater than zero") if price <= 0
+    @isbn = isbn
+    @price = price
+  end
+  
+  attr_reader :isbn, :price
+
+  def isbn=(isbn)
+    raise ArgumentError.new("ISBN is an empty string!") if isbn.empty?
+    @isbn = isbn
+  end
+  
+  def price=(price)
+    raise ArgumentError.new("Price should be greater than zero") if price <= 0
+    @price = price
+  end
+  
+  def price_as_string
+    format '$%.2f', @price
+  end
+  
 end
